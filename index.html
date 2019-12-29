@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mofmee.me</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id=app>
+        <h1>{{message}} {{siteName}}{{siteDomain}}</h1>
+        <button v-on:click="siteName = siteName+'e'">"e"</button>
+    </div>
+</body>
+</html>
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'HELLO!',
+        siteName:'mofmee',
+        siteDomain: '.me'
+    },
+})
+</script>
