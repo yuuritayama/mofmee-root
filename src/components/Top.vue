@@ -4,6 +4,7 @@
     <main-image></main-image>
     <sns></sns>
     <service></service>
+    <main-footer></main-footer>
   </div>
 </template>
 
@@ -12,14 +13,16 @@ import Navbar from '@/components/Navbar'
 import MainImage from '@/components/MainImage'
 import Sns from '@/components/Sns'
 import Service from '@/components/Service'
+import MainFooter from '@/components/MainFooter'
 
 export default {
     name: 'Top',
     components: {
-        Navbar,
-        MainImage,
-        Sns,
-        Service
+      Navbar,
+      MainImage,
+      Sns,
+      Service,
+      MainFooter
     }
 }
 </script>
@@ -30,7 +33,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #241a08;
 }
+
 </style>

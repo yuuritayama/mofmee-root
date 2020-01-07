@@ -1,8 +1,7 @@
 <template>
     <div>
-      <a href="https://twitter.com/mof_mmm" target="_blank"><img src="@/assets/iconmonstr-twitter-4-240.png"></a>
-      <a href="https://www.instagram.com/mof_mmm/" target="_blank"><img src="@/assets/iconmonstr-instagram-9-240.png"></a>
-      <a href="https://github.com/mof-mmm" target="_blank"><img src="@/assets/iconmonstr-github-1-240.png"></a>
+      <a href="https://twitter.com/mof_mmm" target="_blank"><img class="sns-icon" src="@/assets/twitter.png"></a>
+      <a href="https://www.instagram.com/mof_mmm/" target="_blank"><img class="sns-icon" src="@/assets/instagram.png"></a>
     </div>
 </template>
 
@@ -11,3 +10,10 @@ export default {
   name: 'Sns'
 }
 </script>
+
+<style scoped>
+.sns-icon {
+  height: 40px;
+  margin: 10px;
+}
+</style>
