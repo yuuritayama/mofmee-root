@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Top from '@/components/Top'
-import Profile from '@/components/Profile'
+import Home from '@/components/pages/Home'
+import Profile from '@/components/pages/Profile'
+import Illustration from '@/components/pages/Illustration'
+import WebService from '@/components/pages/WebService'
+import Contact from '@/components/pages/Contact'
 
 Vue.use(Router)
 
@@ -10,11 +13,23 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Top
+      component: Home
     },
     {
       path: '/profile',
       component: Profile
+    },
+    {
+      path: '/illustration',
+      component: Illustration
+    },
+    {
+      path: '/web-service',
+      component: WebService
+    },
+    {
+      path: '/contact',
+      component: Contact
     }
   ]
 })

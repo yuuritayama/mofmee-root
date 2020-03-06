@@ -1,0 +1,47 @@
+<template>
+  <div id="app">
+    <navbar></navbar>
+    <main-image></main-image>
+    <sns></sns>
+    <service></service>
+    <main-footer></main-footer>
+  </div>
+</template>
+
+<script>
+import Navbar from '@/components/modules/Navbar'
+import MainImage from '@/components/modules/MainImage'
+import Sns from '@/components/modules/Sns'
+import Service from '@/components/modules/Service'
+import MainFooter from '@/components/modules/MainFooter'
+
+export default {
+    name: 'Home',
+    components: {
+      Navbar,
+      MainImage,
+      Sns,
+      Service,
+      MainFooter
+    }
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #41312c;
+  background-color: #ede4dc;
+}
+
+.color{
+  color:#41312c;
+  color:#ede4dc;
+  color:#82b7bd;
+  color:#faf0d7;
+  color:#f9f5f0;
+}
+</style>
