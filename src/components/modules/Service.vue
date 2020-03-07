@@ -2,24 +2,24 @@
   <div class="service-global">
     <h2 class="title">SERVICE</h2>
     <div class="service-container">
-      <div class="vue-carousel">
+      <div class="service-slide">
         <!-- スライド部分 -->
         <transition :name="transitionName">
           <template v-for="(content, index) in contents">
             <div v-if="visibleContent == index" :key="index">
-              <img :src="content.src" class="service-img" />
-              <h3>{{ content.title }}</h3>
-              <div>{{ content.caption }}</div>
-              <a :href="content.link" target="_blank" class="button-link">
+              <img class="service-img" :src="content.src" />
+              <h3 class="service-title">{{ content.title }}</h3>
+              <div class="service-caption">{{ content.caption }}</div>
+              <a class="button-link" :href="content.link" target="_blank">
                 {{ content.button }}
               </a>
             </div>
           </template>
         </transition>
-        <!-- 「PREV」「NEXT」と現在地のドット -->
-        <div class="vue-carousel_footer">
-          <img src="@/assets/icons/arrow-left.png" class="button-img" @click="sliderPrev()" />
-          <img src="@/assets/icons/arrow-right.png" class="button-img" @click="sliderNext()" />
+        <!-- prev と next -->
+        <div class="service-slide_footer">
+          <img class="button-img" src="@/assets/icons/arrow-left.png" @click="sliderPrev()" />
+          <img class="button-img" src="@/assets/icons/arrow-right.png" @click="sliderNext()" />
         </div>
       </div>
     </div>
@@ -35,22 +35,22 @@ export default {
       visibleContent: 0,
       contents: [
         {
-          title: 'SUZURI　グッズ',
-          src: require('@/assets/surisurikun.png'),
-          caption: 'スマートフォンケースやTシャツ、ステッカーなどのグッズを販売しています。',
+          title: 'グッズ販売',
+          src: require('@/assets/service-images/suzuri.png'),
+          caption: 'SUZURIにてスマートフォンケースやTシャツ、ステッカーなどのグッズを販売しています。',
           link: 'https://suzuri.jp/mof_mmm',
           button: '通販はこちら'
         },
         {
           title: 'LINEスタンプ',
-          src: require('@/assets/linestamp.png'),
+          src: require('@/assets/service-images/linestamp.png'),
           caption: 'ひつじのもふちゃんのラインスタンプを配信中です。',
           link: 'https://store.line.me/stickershop/author/310303',
           button: 'ラインスタンプはこちら'
         },
         {
           title: 'イラスト受注',
-          src: require('@/assets/mm-logo-03.png'),
+          src: require('@/assets/service-images/base.png'),
           caption: 'BASEにてSNS用のアイコンイラストをお受けしています。たまにグッズの通販もしています。',
           link: 'https://mof.thebase.in/',
           button: 'イラスト申し込みはこちら'
@@ -64,7 +64,7 @@ export default {
         },
         {
           title: 'note',
-          src: require('@/assets/logo-symbol.png'),
+          src: require('@/assets/service-images/note.png'),
           caption: '日々のあれこれを綴ったエッセイやお知らせはこちら。',
           link: 'https://note.com/mof_mmm',
           button: 'noteを読む'
@@ -98,12 +98,14 @@ export default {
   color: #41312c;
   background-color: #ede4dc;
   display: inline-block;
+  margin: 30px;
 }
 
 .title {
   color: #241a08;
   padding: 0.2em;
   margin: 10px 80px;
+  /* マーカー風下線 */
   background: linear-gradient(transparent 70%, #82b7bd 70%);
 }
 
@@ -111,13 +113,22 @@ export default {
   background-color: #f9f5f0;
 }
 
-/* スライド */
+/* ここからスライド */
 .service-slide {
   display: inline-flex;
 }
 
 .service-img {
-  width: 300px;
+  width: 400px;
+  margin: 20px 0;
+}
+
+.service-title {
+  font-size: 20px;
+}
+
+.service-caption {
+  margin: 0 30px;
 }
 
 .button-img {
@@ -144,31 +155,22 @@ export default {
   color: #ede4dc;
 }
 
-.vue-carousel{
-  height: 500px;
+.service-slide{
+  height: 530px;
   overflow: hidden;
   position: relative;
-  width: 300px;
+  width: 400px;
+}
+
+.service-slide_footer{
+  align-items: center;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  position: absolute;
+  top: 150px;
+  width: 100%;
   }
- .vue-carousel_body{
-    color: #fff;
-    height: 150px;
-    left: 0;
-    line-height: 150px;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 100%;    
-  }
-  .vue-carousel_footer{
-    align-items: center;
-    display: flex;
-    height: 50px;
-    justify-content: space-between;
-    position: absolute;
-    top: 150px;
-    width: 100%;
-    }
 
  /* 進むトランジションと戻るトランジションをそれぞれ用意 */
 .show-next-enter-active, .show-next-leave-active,

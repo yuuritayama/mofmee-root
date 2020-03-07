@@ -7,9 +7,15 @@
                 <img class="p-img" src="@/assets/p-img.jpg">
                 <h3>ももやまもふふ</h3>
                 <p>1994年生まれ</p>
-                <a href="https://twitter.com/mof_mmm" target="_blank"><img class="sns-icon" src="@/assets/icons/twitter.png"></a>
-                <a href="https://www.instagram.com/mof_mmm/" target="_blank"><img class="sns-icon" src="@/assets/icons/instagram.png"></a>
- 
+                <a href="https://twitter.com/mof_mmm" target="_blank">
+                    <img class="sns-icon" src="@/assets/icons/twitter.png">
+                </a>
+                <a href="https://www.instagram.com/mof_mmm/" target="_blank">
+                    <img class="sns-icon" src="@/assets/icons/instagram.png">
+                </a>
+                <a href="https://github.com/mof-mmm" target="_blank">
+                    <img class="sns-icon" src="@/assets/icons/github.png">
+                </a>
             </div>
             <div class="p-section">
                 <div class="p-title">〜できること〜</div>
