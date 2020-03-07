@@ -1,8 +1,8 @@
 <template>
-    <div class="illust-light-box">
+    <div class="illust-lightbox">
         <div class="illustrations" v-for="image in images" :key="image.id">
             <img :src="image.src" />
-            <p>{{ image.title }}</p>
+            <p class="image-title">{{ image.title }}</p>
         </div>
     </div>
 </template>
@@ -45,11 +45,18 @@ export default {
 </script>
 
 <style scoped>
+/* 親要素 */
+.illust-lightbox{
+    position: relative;
+    /*要素内の余白は消す*/
+    padding:0;
+}
+
 img {
     width: 300px;
 }
-
 .illustrations {
     display: inline-block;
 }
+
 </style>
