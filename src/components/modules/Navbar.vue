@@ -34,6 +34,7 @@ export default {
 
 .nav-deco {
   color: #ede4dc;
+  text-decoration: none;
 }
 
 .nav-deco:hover {
