@@ -21,7 +21,7 @@ export default {
 <style scoped>
 .sns-icon {
   height: 40px;
-  margin: 60px 10px 10px 10px;
+  margin: 10px;
 }
 
 .sns-icon:hover {

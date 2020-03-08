@@ -1,6 +1,6 @@
 <template>
   <div class="service-global">
-    <h2 class="title">SERVICE</h2>
+    <h2 class="title">contents</h2>
     <div class="service-container">
       <div class="service-slide">
         <!-- スライド部分 -->
@@ -17,7 +17,7 @@
           </template>
         </transition>
         <!-- prev と next -->
-        <div class="service-slide_footer">
+        <div class="service-slide-button">
           <img class="button-img" src="@/assets/icons/arrow-left.png" @click="sliderPrev()" />
           <img class="button-img" src="@/assets/icons/arrow-right.png" @click="sliderNext()" />
         </div>
@@ -51,26 +51,29 @@ export default {
         {
           title: 'イラスト受注',
           src: require('@/assets/service-images/base.png'),
-          caption: 'BASEにてSNS用のアイコンイラストをお受けしています。たまにグッズの通販もしています。',
+          caption: 'BASEにてSNS用のアイコンイラストをお受けしています。たまにオリジナルグッズの通販もしています。',
           link: 'https://mof.thebase.in/',
-          button: 'イラスト申し込みはこちら'
-        },
-        {
-          title: 'もふふの今日もがんばらない！',
-          src: require('@/assets/blog.png'),
-          caption: '虚弱体質を克服するメソッドを書き溜めたブログです。',
-          link: 'https://mofchan.com/',
-          button: 'blogを読む'
+          button: '申し込みはこちら'
         },
         {
           title: 'note',
           src: require('@/assets/service-images/note.png'),
-          caption: '日々のあれこれを綴ったエッセイやお知らせはこちら。',
+          caption: '日々のあれこれを綴ったエッセイや、待ち受け画像の配信など随時お知らせを更新しています。',
           link: 'https://note.com/mof_mmm',
           button: 'noteを読む'
+        },
+        {
+          title: 'blog',
+          src: require('@/assets/service-images/blog.png'),
+          caption: '毎日生きるので精いっぱい。虚弱体質でうつ状態・自律神経失調症をだったわたしが、それらを克服したメソッドを書き溜めたブログです。',
+          lonk: 'https://mofchan.com',
+          button: '元気になりたい人はcheck!'
         }
       ]
     }
+  },
+  mounted() {
+    setInterval(this.sliderNext, 7000)
   },
   methods: {
     sliderPrev(){
@@ -111,11 +114,16 @@ export default {
 
 .service-container {
   background-color: #f9f5f0;
+  height: 530px;
+  width: 400px;
 }
 
 /* ここからスライド */
-.service-slide {
-  display: inline-flex;
+.service-slide{
+  height: 530px;
+  width: 400px;
+  overflow: hidden;
+  position: relative;
 }
 
 .service-img {
@@ -130,6 +138,16 @@ export default {
 .service-caption {
   margin: 0 30px;
 }
+
+.service-slide-button{
+  align-items: center;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  }
 
 .button-img {
   width:40px;
@@ -154,23 +172,6 @@ export default {
   background: #82b7bd;
   color: #ede4dc;
 }
-
-.service-slide{
-  height: 530px;
-  overflow: hidden;
-  position: relative;
-  width: 400px;
-}
-
-.service-slide_footer{
-  align-items: center;
-  display: flex;
-  height: 50px;
-  justify-content: space-between;
-  position: absolute;
-  top: 150px;
-  width: 100%;
-  }
 
  /* 進むトランジションと戻るトランジションをそれぞれ用意 */
 .show-next-enter-active, .show-next-leave-active,

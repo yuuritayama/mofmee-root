@@ -1,7 +1,7 @@
 <template>
 <div>
   <b-navbar toggleable="lg" type="dark" class="navbar">
-    <b-navbar-brand><router-link  class="nav-deco" to="/"><img src="@/assets/mm-logo-01.png" alt="MOFMEE" class="mm-logo"></router-link></b-navbar-brand>
+    <b-navbar-brand><router-link  class="nav-deco" to="/"><img src="@/assets/mofmee-logo02.png" alt="MOFMEE" class="mm-logo"></router-link></b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 

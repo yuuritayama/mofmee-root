@@ -3,7 +3,9 @@
     <navbar></navbar>
     <main-image></main-image>
     <sns></sns>
-    <service></service>
+    <div class="contents">
+      <service></service>
+    </div>
     <main-footer></main-footer>
   </div>
 </template>
@@ -35,6 +37,16 @@ export default {
   text-align: center;
   color: #41312c;
   background-color: #ede4dc;
+}
+
+.contents {
+    display: inline-flex;
+  }
+
+@media screen and (max-width: 920px) {
+  .contents {
+    display: block;
+  }
 }
 
 .color{

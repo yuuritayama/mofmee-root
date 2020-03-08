@@ -3,19 +3,22 @@
         <navbar></navbar>
         <div class="p-global">
             <h2>profile</h2>
-            <div>
-                <img class="p-img" src="@/assets/p-img.jpg">
-                <h3>ももやまもふふ</h3>
-                <p>1994年生まれ</p>
-                <a href="https://twitter.com/mof_mmm" target="_blank">
-                    <img class="sns-icon" src="@/assets/icons/twitter.png">
-                </a>
-                <a href="https://www.instagram.com/mof_mmm/" target="_blank">
-                    <img class="sns-icon" src="@/assets/icons/instagram.png">
-                </a>
-                <a href="https://github.com/mof-mmm" target="_blank">
-                    <img class="sns-icon" src="@/assets/icons/github.png">
-                </a>
+            <div class="profile">
+                <div class="p-section-left">
+                    <img class="p-img" src="@/assets/p-img.jpg">
+                    <sns></sns>
+                </div>
+                <div class="p-section-right">
+                    <h3>ももやまもふふ</h3>
+                    <h4>イラストレーター / 駆け出しエンジニア</h4>
+                    <p>1994年5月1日生まれ 誕生花：スズラン</p>
+                    <p>某私立大学 哲学・思想系学部卒業<br>
+                    服飾系専門学校卒業</p>
+                    <p>どこかでだれかをハッピーにするものづくりをしています。<br>
+                    ツイッターやインスタグラムではゆるゆる癒し系のイラストを発信。<br>
+                    「より楽に楽しく生きる」ためのメソッドをブログで公開中。
+                    現在は薬膳の情報サイトも製作中です。</p>
+                </div>
             </div>
             <div class="p-section">
                 <div class="p-title">〜できること〜</div>
@@ -29,12 +32,6 @@
                   お絵描き、登山、中医学とアーユルヴェーダの勉強
                 </div>
             </div>
-            <div class="p-section">
-                <div class="p-title">〜CONTACT〜</div>
-                <div class="p-text">
-                  <p>momoyama.mf@gmail.com<br>twitter:@mof_mmm</p>
-                </div>
-            </div>
         </div>
         <main-footer></main-footer>
     </div>
@@ -42,12 +39,14 @@
 
 <script>
 import Navbar from '@/components/modules/Navbar'
+import Sns from '@/components/modules/Sns'
 import MainFooter from '@/components/modules/MainFooter'
 
 export default {
     name: 'Profile',
     components: {
         Navbar,
+        Sns,
         MainFooter
     }
 }
@@ -55,43 +54,60 @@ export default {
 
 <style scoped>
 .p-global {
-    height:1000px;
-}
-.p-img {
-    height:100px;
-    border-radius:50px;
-    margin:20px;
+    flex-wrap: wrap;
+    margin: 100px;
 }
 
 h2 {
-    font-size:125%;
-    margin:20px;
+    text-align: left;
+    width: 100%;
+    /* マーカー風下線 */
+    background: linear-gradient(transparent 70%, #82b7bd 70%);
 }
 
-h3 {
-    font-size:125%;
-    margin:10px 10px 20px 10px;
+.profile {
+    display: inline-flex;
 }
 
-p {
-    font-size:90%;
+@media screen and (max-width: 600px) {
+    .profile {
+        display: inline-block;
+    }
+}
+
+.p-section-left {
+    border-style: solid;
+    margin: 10px;
+}
+
+.p-section-left img {
+    margin:20px 0;
+    width: 180px;
+    border-radius: 50%;
+}
+
+.p-section-right {
+    border-style: solid;
+    margin: 10px;
+    text-align: left;
+}
+
+.p-section-right h3 {   
+    font-size:20px;
+    margin-bottom: 20px;
+}
+
+.p-section-right h4 {   
+    font-size:14px;
+    margin: 20px 0;
+}
+
+.p-section-right p {
+    font-size: 14px;
 }
 
 .p-section {
-    margin:15px
+    margin: 10px;
 }
 
-.p-title {
-    font-size:90%;
-}
-.p-text {
-    display: inline-block;
-    font-size:80%;
-    width:200px;
-}
-
-.sns-icon {
-  height: 40px;
-  margin: 5px;
-}
 </style>
