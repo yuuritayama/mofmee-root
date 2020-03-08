@@ -5,8 +5,9 @@
             <div>Webサイトの制作をしています。</div>
             <div class="w-container" v-for="website in websites" :key="website.id">
                 <img :src="website.src" />
-                <h3>{{ website.title }}</h3>
+                <h3><router-link :to="'/web-service/' + website.title">{{ website.title }}</router-link></h3>
                 <p>{{ website.caption }}</p>
+                <p>framework: {{ website.use }}</p>
             </div>
         </div>
         <main-footer></main-footer>
@@ -28,9 +29,10 @@ export default {
             websites: [
                 {
                     url: 'https://mofmee.me',
-                    title: 'mofmee',
+                    title: 'mofmee1',
                     src: require('@/assets/work-website/mofmee/mockup-mofmee-pc.png'),
-                    caption: '1',
+                    caption: '当ホームページです。',
+                    use: 'Vue.js',
                     id: 1
                 },
                 {
@@ -38,6 +40,7 @@ export default {
                     title: 'mofmee2',
                     src: require('@/assets/work-website/mofmee/mockup-mofmee-pc.png'),
                     caption: '2',
+                    use: 'Vue.js',
                     id: 2
                 }
             ]
