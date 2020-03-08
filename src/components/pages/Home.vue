@@ -5,6 +5,7 @@
     <sns></sns>
     <div class="contents">
       <service></service>
+      <information></information>
     </div>
     <main-footer></main-footer>
   </div>
@@ -15,6 +16,7 @@ import Navbar from '@/components/modules/Navbar'
 import MainImage from '@/components/modules/MainImage'
 import Sns from '@/components/modules/Sns'
 import Service from '@/components/modules/Service'
+import Information from '@/components/modules/Information'
 import MainFooter from '@/components/modules/MainFooter'
 
 export default {
@@ -24,6 +26,7 @@ export default {
       MainImage,
       Sns,
       Service,
+      Information,
       MainFooter
     }
 }
@@ -53,7 +56,6 @@ export default {
   color:#41312c;
   color:#ede4dc;
   color:#82b7bd;
-  color:#faf0d7;
   color:#f9f5f0;
 }
 </style>
