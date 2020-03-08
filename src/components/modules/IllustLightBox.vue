@@ -45,18 +45,19 @@ export default {
 </script>
 
 <style scoped>
-/* 親要素 */
 .illust-lightbox{
-    position: relative;
-    /*要素内の余白は消す*/
-    padding:0;
+    margin: 20px;
+}
+
+.illustrations {
+    display: inline-block;
+    background-color: #f9f5f0;
+    margin: 4px;
 }
 
 img {
     width: 300px;
-}
-.illustrations {
-    display: inline-block;
+    margin: 10px;
 }
 
 </style>

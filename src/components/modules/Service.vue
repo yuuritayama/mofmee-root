@@ -10,7 +10,7 @@
               <img class="service-img" :src="content.src" />
               <h3 class="service-title">{{ content.title }}</h3>
               <div class="service-caption">{{ content.caption }}</div>
-              <a class="button-link" :href="content.link" target="_blank">
+              <a class="button-link" :href="content.url" target="_blank">
                 {{ content.button }}
               </a>
             </div>
@@ -38,35 +38,35 @@ export default {
           title: 'グッズ販売',
           src: require('@/assets/service-images/suzuri.png'),
           caption: 'SUZURIにてスマートフォンケースやTシャツ、ステッカーなどのグッズを販売しています。',
-          link: 'https://suzuri.jp/mof_mmm',
+          url: 'https://suzuri.jp/mof_mmm',
           button: '通販はこちら'
         },
         {
           title: 'LINEスタンプ',
           src: require('@/assets/service-images/linestamp.png'),
           caption: 'ひつじのもふちゃんのラインスタンプを配信中です。',
-          link: 'https://store.line.me/stickershop/author/310303',
+          url: 'https://store.line.me/stickershop/author/310303',
           button: 'ラインスタンプはこちら'
         },
         {
           title: 'イラスト受注',
           src: require('@/assets/service-images/base.png'),
           caption: 'BASEにてSNS用のアイコンイラストをお受けしています。たまにオリジナルグッズの通販もしています。',
-          link: 'https://mof.thebase.in/',
+          url: 'https://mof.thebase.in/',
           button: '申し込みはこちら'
         },
         {
           title: 'note',
           src: require('@/assets/service-images/note.png'),
           caption: '日々のあれこれを綴ったエッセイや、待ち受け画像の配信など随時お知らせを更新しています。',
-          link: 'https://note.com/mof_mmm',
+          url: 'https://note.com/mof_mmm',
           button: 'noteを読む'
         },
         {
           title: 'blog',
           src: require('@/assets/service-images/blog.png'),
           caption: '毎日生きるので精いっぱい。虚弱体質でうつ状態・自律神経失調症をだったわたしが、それらを克服したメソッドを書き溜めたブログです。',
-          lonk: 'https://mofchan.com',
+          url: 'https://mofchan.com',
           button: '元気になりたい人はcheck!'
         }
       ]
