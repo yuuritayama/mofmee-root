@@ -2,12 +2,11 @@
     <div>
         <navbar></navbar>
         <div class="w-global">
-            <div>Webサイトの制作をしています。</div>
+            <h2>web-service</h2>
             <div class="w-container" v-for="website in websites" :key="website.id">
-                <img :src="website.src" />
-                <h3><router-link :to="'/web-service/' + website.title">{{ website.title }}</router-link></h3>
-                <p>{{ website.caption }}</p>
-                <p>framework: {{ website.use }}</p>
+                <router-link :to="'/web-service/' + website.title"><img :src="website.src" /></router-link>
+                <h3><router-link class="w-title" :to="'/web-service/' + website.title">{{ website.title }}</router-link></h3>
+                <p>{{ website.use }}</p>
             </div>
         </div>
         <main-footer></main-footer>
@@ -29,19 +28,10 @@ export default {
             websites: [
                 {
                     url: 'https://mofmee.me',
-                    title: 'mofmee1',
-                    src: require('@/assets/work-website/mofmee/mockup-mofmee-pc.png'),
-                    caption: '当ホームページです。',
-                    use: 'Vue.js',
+                    title: 'mofmee',
+                    src: require('@/assets/work-website/mofmee/thumbnail-mofmee.png'),
+                    use: 'Design / Vue.js',
                     id: 1
-                },
-                {
-                    url: 'https://mofmee.me',
-                    title: 'mofmee2',
-                    src: require('@/assets/work-website/mofmee/mockup-mofmee-pc.png'),
-                    caption: '2',
-                    use: 'Vue.js',
-                    id: 2
                 }
             ]
         }
@@ -50,8 +40,15 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+    text-align: left;
+    width: 100%;
+    /* マーカー風下線 */
+    background: linear-gradient(transparent 70%, #82b7bd 70%);
+}
+
 .w-global {
-    margin: 20px;
+    margin: 20px 100px;
 }
 
 .w-container {
@@ -59,8 +56,25 @@ export default {
     background-color: #f9f5f0;
     margin: 4px;
 }
+
 img {
-    width: 600px;
+    width: 500px;
     margin: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    img {
+        width: 300px;
+    }
+}
+
+.w-title {
+    margin: 10px;
+    text-decoration: none;
+    color: #41312c;
+}
+
+.w-title:hover {
+    color: #82b7bd;
 }
 </style>
