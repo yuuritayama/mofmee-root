@@ -2,19 +2,7 @@
   <div class="top-image-global">
     <div class="mi-container">
       <div class="mi-slide">
-        <!-- スライド部分 -->
-        <transition :name="transitionName">
-          <template v-for="(content, index) in contents">
-            <div v-if="visibleContent == index" :key="index">
-              <img class="mi-img" :src="contents[index].src" :key="index" />
-            </div>
-          </template>
-        </transition>
-        <!-- prev と next -->
-        <div class="mi-slide-button">
-          <img class="button-img" src="@/assets/icons/arrow-left.png" @click="sliderPrev()" />
-          <img class="button-img" src="@/assets/icons/arrow-right.png" @click="sliderNext()" />
-        </div>
+              <img class="mi-img" src='@/assets/top-images/top-image01.png' />
         <!-- ロゴと説明 -->
         <div class="discription">
           <img src="@/assets/mofmee-logo01.png" />
@@ -31,8 +19,6 @@ export default {
   name: 'MainImage',
   data() {
     return {
-      transitionName: 'show-next',
-      visibleContent: 0,
       contents: [
         {
           title: 'top1',
@@ -43,27 +29,6 @@ export default {
           src: require('@/assets/top-images/top-image02.png')
         }
       ]
-    }
-  },
-  mounted() {
-    setInterval(this.sliderNext, 8000)
-  },
-  methods: {
-    sliderPrev(){
-      this.transitionName = 'show-prev'
-      if(this.visibleContent < 1) {
-        this.visibleContent = this.contents.length - 1
-      } else {
-        this.visibleContent--
-      }  
-    },
-    sliderNext(){
-      this.transitionName = 'show-next'
-      if(this.visibleContent === this.contents.length - 1) {
-        this.visibleContent = 0
-      } else {
-        this.visibleContent++
-      }
     }
   }
 }
@@ -79,7 +44,7 @@ export default {
 /* PC */
 .mi-container {
   height: 600px;
-}  
+}
 
 .mi-slide{
   height: 600px;
@@ -89,32 +54,14 @@ export default {
 
 .mi-img {
   justify-content: center;
-  height: 600px
-}
-
-.mi-slide-button {
-  align-items: center;
-  display: flex;
-  height: 300px;
-  justify-content: space-between;
-  position: absolute;
-  top: 150px;
-  width: 100%;
-}
-
-.mi-slide-button .button-img {
-  width:60px;
-}
-
-.mi-slide-button .button-img:hover {
-  opacity: 80%;
+  height: 600px;
 }
 
 /* タブレット */
 @media screen and (max-width: 959px){
   .mi-container {
     height: 350px;
-  }  
+  }
 
   .mi-slide{
     height: 350px;
@@ -126,31 +73,13 @@ export default {
     justify-content: center;
     height: 350px
   }
-
-  .mi-slide-button {
-    align-items: center;
-    display: flex;
-    height: 50px;
-    justify-content: space-between;
-    position: absolute;
-    top: 150px;
-    width: 100%;
-  }
-
-  .mi-slide-button .button-img {
-    width:40px;
-  }  
-
-  .mi-slide-button .button-img:hover {
-    opacity: 80%;
-  }
 }
 
 /* スマフォ */
 @media screen and (max-width:559px){
   .mi-container {
     height: 230px;
-  } 
+  }
   .mi-slide{
       height: 230px;
       overflow: hidden;
@@ -161,38 +90,8 @@ export default {
     justify-content: center;
     height: 230px;
   }
-
-  .mi-slide-button {
-    align-items: center;
-    display: flex;
-    height: 70px;
-    justify-content: space-between;
-    position: absolute;
-    top: 80px;
-    width: 100%;
-    }
-
-  .mi-slide-button .button-img {
-    width:30px;
-  }
-
-  .mi-slide-button .button-img:hover {
-    opacity: 80%;
-  }
 }
 
- /* 進むトランジションと戻るトランジションをそれぞれ用意 */
-.show-next-enter-active, .show-next-leave-active,
-.show-prev-enter-active, .show-prev-leave-active  {
-  transition: all .8s;
-}
-.show-next-enter, .show-prev-leave-to {
-  transform: translateX(100%);
-}
-
-.show-next-leave-to, .show-prev-enter {
-  transform: translateX(-100%);
-}
 
 /* ロゴと説明 */
 .discription {

@@ -4,7 +4,7 @@
         <div  class="i-container">
             <div v-for="information in informations" :key="information.id">
                 <p>{{ information.date }} 
-                    <a :href="information.url">{{ information.title }}</a>
+                    <a :href="information.url" target="_blank">{{ information.title }}</a>
                 </p>
             </div>
         </div>
@@ -20,7 +20,7 @@ export default {
                 {
                     date: '2019/3/9',
                     title: 'ホームページを更新しました。',
-                    url: '#',
+                    url: 'https://note.com/mof_mmm/n/n52cb49227cce',
                     id: 2
                 },
                 {
