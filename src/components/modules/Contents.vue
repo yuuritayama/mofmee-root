@@ -1,12 +1,12 @@
 <template>
-  <div class="s-global">
+  <div class="c-global">
     <h2 class="title">contents</h2>
-    <div class="s-container">
+    <div class="c-container">
       <template v-for="content in contents">
-          <div class="s-box" :key="content.title">
-            <img class="s-img" :src="content.src" />
-            <h3 class="s-title">{{ content.title }}</h3>
-            <div class="s-caption">{{ content.caption }}</div>
+          <div class="c-box" :key="content.title">
+            <img class="c-img" :src="content.src" />
+            <h3 class="c-title">{{ content.title }}</h3>
+            <div class="c-caption">{{ content.caption }}</div>
             <a class="button-link" :href="content.url" target="_blank">
               {{ content.button }}
             </a>
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'Service',
+  name: 'Contents',
   data() {
     return {
       contents: [
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style scoped>
-.s-global {
+.c-global {
   color: #41312c;
   background-color: #ede4dc;
   margin: 30px auto;
@@ -79,37 +79,36 @@ export default {
   background: linear-gradient(transparent 70%, #82b7bd 70%);
 }
 
-.s-container {
+.c-container {
   width: 100%;
   display: inline-flex;
   flex-wrap: wrap;
-
 }
 
-.s-box {
+.c-box {
   background-color: #f9f5f0;
   height: 530px;
   width: 400px;
   margin: 10px auto;
 }
 
-.s-slide{
+.c-slide{
   height: 530px;
   width: 400px;
   overflow: hidden;
   position: relative;
 }
 
-.s-img {
+.c-img {
   width: 400px;
   margin: 20px 0;
 }
 
-.s-title {
+.c-title {
   font-size: 20px;
 }
 
-.s-caption {
+.c-caption {
   margin: 0 30px;
 }
 .button-img {

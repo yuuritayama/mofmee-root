@@ -5,7 +5,7 @@
     <main-image></main-image>
     <sns></sns>
     <div class="contents">
-      <service></service>
+      <contents></contents>
       <information></information>
     </div>
     <main-footer></main-footer>
@@ -16,7 +16,7 @@
 import Navbar from '@/components/modules/Navbar'
 import MainImage from '@/components/modules/MainImage'
 import Sns from '@/components/modules/Sns'
-import Service from '@/components/modules/Service'
+import Contents from '@/components/modules/Contents'
 import Information from '@/components/modules/Information'
 import MainFooter from '@/components/modules/MainFooter'
 
@@ -26,7 +26,7 @@ export default {
       Navbar,
       MainImage,
       Sns,
-      Service,
+      Contents,
       Information,
       MainFooter
     }
