@@ -71,14 +71,6 @@ export default {
   width: 80%;
 }
 
-.title {
-  color: #241a08;
-  padding: 0.2em;
-  margin: 10px 80px;
-  /* マーカー風下線 */
-  background: linear-gradient(transparent 70%, #82b7bd 70%);
-}
-
 .c-container {
   width: 100%;
   display: inline-flex;
@@ -92,25 +84,57 @@ export default {
   margin: 10px auto;
 }
 
-.c-slide{
-  height: 530px;
-  width: 400px;
-  overflow: hidden;
-  position: relative;
-}
-
 .c-img {
   width: 400px;
   margin: 20px 0;
+}
+
+.c-caption {
+  margin: 0 30px;
+}
+
+/* スマフォ */
+@media screen and (max-width:559px){
+  .c-global {
+    width: 360px;
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  .c-container {
+    width: 360px;
+    margin: 10px 0;
+  }
+  .c-box {
+    background-color: #f9f5f0;
+    height: 480px;
+    width: 400px;
+    margin: 10px 0;
+  }
+
+  .c-img {
+    width: 340px;
+    margin: 0;
+  }
+
+  .c-caption {
+    margin: 10px;
+  }
+}
+
+
+.title {
+  color: #241a08;
+  padding: 0.2em;
+  margin: 10px 0px;
+  /* マーカー風下線 */
+  background: linear-gradient(transparent 70%, #82b7bd 70%);
 }
 
 .c-title {
   font-size: 20px;
 }
 
-.c-caption {
-  margin: 0 30px;
-}
 .button-img {
   width:40px;
 }

@@ -59,7 +59,7 @@
                 <div class="p-text">
                     <p>
                         服飾系専門学校を出ています。<br>
-                        洋服のデザイン、パターン作成、縫製まで一通り技術があります。<br>
+                        洋服のデザイン、パターン作成、縫製まで一通りの技術があります。<br>
                         作品のギャラリーは準備中です。
                     </p>
                 </div>
@@ -107,21 +107,36 @@ export default {
     margin: 20px 100px;
 }
 
+.profile {
+    display: inline-flex;
+}
+
+/* タブレット */
+@media screen and (max-width: 959px){
+    .p-global {
+        margin: 20px 50px;
+    }
+    .profile {
+        display: inline-flex;
+    }
+}
+
+/* スマフォ */
+@media screen and (max-width:559px){
+    .p-global {
+        margin: 20px 20px;
+    }
+
+    .profile {
+        display: inline-block;
+    }
+}
+
 h2 {
     text-align: left;
     width: 100%;
     /* マーカー風下線 */
     background: linear-gradient(transparent 70%, #82b7bd 70%);
-}
-
-.profile {
-    display: inline-flex;
-}
-
-@media screen and (max-width: 600px) {
-    .profile {
-        display: inline-block;
-    }
 }
 
 .p-overview {
@@ -141,6 +156,7 @@ h2 {
 
 .p-section-right {
     margin: 10px;
+    padding: 10px 0 0 10px;
     text-align: left;
 }
 
@@ -160,6 +176,7 @@ h2 {
 
 .p-section {
     margin: 10px;
+    padding: 10px;
     text-align: left;
     background-color: #f9f5f0;
 }
@@ -182,7 +199,7 @@ h2 {
 .p-section .p-text .p-button {
     display: inline-block;
     padding: 0.3em 1em;
-    margin: 20px;
+    margin: 10px;
     text-decoration: none;
     color: #82b7bd;
     border: solid 2px #82b7bd;

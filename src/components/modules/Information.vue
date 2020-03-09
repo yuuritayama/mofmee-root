@@ -1,7 +1,7 @@
 <template>
-    <div class="n-global">
-        <h2 class="n-title">Information</h2>
-        <div  class="n-container">
+    <div class="i-global">
+        <h2 class="i-title">Information</h2>
+        <div  class="i-container">
             <div v-for="information in informations" :key="information.id">
                 <p>{{ information.date }} 
                     <a :href="information.url">{{ information.title }}</a>
@@ -35,33 +35,47 @@ export default {
 </script>
 
 <style scoped>
-.n-global {
+.i-global {
   color: #41312c;
   background-color: #ede4dc;
   display: inline-block;
-  margin: 30px;
+  margin: 30px auto;
 }
 
-.n-title {
-  color: #241a08;
-  padding: 0.2em;
-  margin: 10px 80px;
-  /* マーカー風下線 */
-  background: linear-gradient(transparent 70%, #82b7bd 70%);
-}
-
-.n-container {
+.i-container {
   background-color: #f9f5f0;
   width: 400px;
   padding: 20px;
 }
 
-.n-container p {
+/* スマフォ */
+@media screen and (max-width:559px){
+    .i-global {
+        margin: 30px 10px;
+    }
+
+    .i-container {
+        background-color: #f9f5f0;
+        width: 360px;
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+}
+
+.i-title {
+  color: #241a08;
+  padding: 0.2em;
+  margin: 10px 0px;
+  /* マーカー風下線 */
+  background: linear-gradient(transparent 70%, #82b7bd 70%);
+}
+
+.i-container p {
     position: relative;
     padding-left: 25px;
 }
 
-.n-container p:before {
+.i-container p:before {
     position: absolute;
     content: '';
     bottom: -3px;
@@ -73,7 +87,7 @@ export default {
     border-bottom: solid 15px #ede4dc;
 }
 
-.n-container p:after {
+.i-container p:after {
     position: absolute;
     content: '';
     bottom: -3px;
@@ -82,12 +96,12 @@ export default {
     border-bottom: solid 3px #ede4dc;
 }
 
-.n-container p a {
+.i-container p a {
     color: #41312c;
     text-decoration: none;
 }
 
-.n-container p a:hover {
+.i-container p a:hover {
     color: #82b7bd;
 }
 </style>

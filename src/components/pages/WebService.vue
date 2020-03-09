@@ -49,6 +49,20 @@ h2 {
     margin: 20px 100px;
 }
 
+/* タブレット */
+@media screen and (max-width: 959px){
+    .w-global {
+        margin: 20px 50px;
+    }
+}
+
+/* スマフォ */
+@media screen and (max-width:559px){
+    .w-global {
+        margin: 20px 20px;
+    }
+}
+
 .w-container {
     display: inline-block;
     background-color: #f9f5f0;

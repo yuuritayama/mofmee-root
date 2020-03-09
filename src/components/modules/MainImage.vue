@@ -6,7 +6,7 @@
         <transition :name="transitionName">
           <template v-for="(content, index) in contents">
             <div v-if="visibleContent == index" :key="index">
-              <img class="mi-img" :src="content.src" />
+              <img class="mi-img" :src="contents[index].src" :key="index" />
             </div>
           </template>
         </transition>
@@ -184,11 +184,12 @@ export default {
  /* 進むトランジションと戻るトランジションをそれぞれ用意 */
 .show-next-enter-active, .show-next-leave-active,
 .show-prev-enter-active, .show-prev-leave-active  {
-  transition: all .4s;
+  transition: all .8s;
 }
 .show-next-enter, .show-prev-leave-to {
   transform: translateX(100%);
 }
+
 .show-next-leave-to, .show-prev-enter {
   transform: translateX(-100%);
 }
