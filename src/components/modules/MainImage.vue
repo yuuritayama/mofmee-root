@@ -72,15 +72,10 @@ export default {
 <style scoped>
 .top-image-global {
   position: relative;
+  margin-bottom: 60px;
 }
 
 /* ここからスライド */
-
-.mi-slide-button .button-img:hover {
-  opacity: 80%;
-}
-
-
 /* PC */
 .mi-container {
   height: 600px;
@@ -98,17 +93,21 @@ export default {
 }
 
 .mi-slide-button {
-align-items: center;
-display: flex;
-height: 300px;
-justify-content: space-between;
-position: absolute;
-top: 150px;
-width: 100%;
+  align-items: center;
+  display: flex;
+  height: 300px;
+  justify-content: space-between;
+  position: absolute;
+  top: 150px;
+  width: 100%;
 }
 
 .mi-slide-button .button-img {
-  width:80px;
+  width:60px;
+}
+
+.mi-slide-button .button-img:hover {
+  opacity: 80%;
 }
 
 /* タブレット */
@@ -129,18 +128,22 @@ width: 100%;
   }
 
   .mi-slide-button {
-  align-items: center;
-  display: flex;
-  height: 50px;
-  justify-content: space-between;
-  position: absolute;
-  top: 150px;
-  width: 100%;
+    align-items: center;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    position: absolute;
+    top: 150px;
+    width: 100%;
   }
 
   .mi-slide-button .button-img {
     width:40px;
   }  
+
+  .mi-slide-button .button-img:hover {
+    opacity: 80%;
+  }
 }
 
 /* スマフォ */
@@ -172,12 +175,11 @@ width: 100%;
   .mi-slide-button .button-img {
     width:30px;
   }
+
+  .mi-slide-button .button-img:hover {
+    opacity: 80%;
+  }
 }
-
-
-
-
-
 
  /* 進むトランジションと戻るトランジションをそれぞれ用意 */
 .show-next-enter-active, .show-next-leave-active,

@@ -5,14 +5,17 @@
             <h2>web-service</h2>
             <div class="wd-container" v-for="websiteDetail in websitesDetail" :key="websiteDetail.title">
                 <template v-if="websiteDetail.title === id">
-                    <a :href="websiteDetail.url" target="_blank">
-                        <img :src="websiteDetail.src" />
+                    <img :src="websiteDetail.src" />
+                    <p class="wd-title">{{ websiteDetail.title }}</p>
+                    <a class="wd-button" :href="websiteDetail.url" target="_blank">
+                        {{ websiteDetail.url }}
                     </a>
-                    <a :href="websiteDetail.url" target="_blank">
-                        <p class="wd-title">{{ websiteDetail.title }}</p>
-                    </a>
-                    <p class="wd-work">{{ websiteDetail.work }}</p>
-                    <p class="wd-detail">{{ websiteDetail.detail }}</P>
+                    <div class="wd-description">
+                        <p>{{ websiteDetail.description }}</p>
+                        <p>制作担当<br>{{ websiteDetail.potision }}</P>
+                        <p>使用ツール<br>{{ websiteDetail.tool}}</p>
+                        <p>使用言語 フレームワーク CMSなど<br>{{ websiteDetail.lang }}</p>
+                    </div>
                 </template>
             </div>
         </div>
@@ -37,8 +40,10 @@ export default {
                     src: require('@/assets/work-website/mofmee/thumbnail-mofmee.png'),
                     title: 'mofmee',
                     url: 'https://mofmee.me',
-                    work: 'Design / Vue.js',
-                    detail: 'イラストレーター/駆け出しエンジニアのももやまもふふの個人ホームページです。イラストやデザイン、コーディングまで一通り行いました。'
+                    description: '始めて本格的に制作したWebサイトです。当サイトの管理者であるももやまもふふのポートフォリオサイトになります。イラストやデザイン、コーディングまで一通り行いました。',
+                    potision: 'Design / Cording',
+                    tool: 'CLIP STUDIO PAINT',
+                    lang: 'HTML / CSS / Vue.js',
                 }
             ]
         }
@@ -58,6 +63,44 @@ export default {
 <style scoped>
 .wd-global {
     margin: 20px 100px;
+}
+
+.wd-description {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 60%;
+    margin: 10px auto;
+}
+
+/* タブレット */
+@media screen and (max-width: 959px){
+    .wd-global {
+        margin: 20px 50px;
+    }
+
+    .wd-description {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 70%;
+    margin: 10px auto;
+    }
+}
+
+/* スマフォ */
+@media screen and (max-width:559px){
+    .wd-global {
+        margin: 20px 20px;
+    }
+
+    .wd-description {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 80%;
+    margin: 10px auto;
+    }
 }
 
 h2 {
@@ -85,12 +128,19 @@ h2 {
     color: #41312c;
 }
 
-.wd-title:hover {
+.wd-button {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 14px;
+    text-decoration: none;
     color: #82b7bd;
+    border: solid 2px #82b7bd;
+    border-radius: 3px;
+    transition: .4s;
 }
 
-.wd-detail {
-    font-size: 14px;
-    margin: 0 20px;
+.wd-button:hover {
+  background: #82b7bd;
+  color: #ede4dc;
 }
 </style>

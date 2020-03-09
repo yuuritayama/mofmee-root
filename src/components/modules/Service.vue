@@ -1,27 +1,17 @@
 <template>
-  <div class="service-global">
+  <div class="s-global">
     <h2 class="title">contents</h2>
-    <div class="service-container">
-      <div class="service-slide">
-        <!-- スライド部分 -->
-        <transition :name="transitionName">
-          <template v-for="(content, index) in contents">
-            <div v-if="visibleContent == index" :key="index">
-              <img class="service-img" :src="content.src" />
-              <h3 class="service-title">{{ content.title }}</h3>
-              <div class="service-caption">{{ content.caption }}</div>
-              <a class="button-link" :href="content.url" target="_blank">
-                {{ content.button }}
-              </a>
-            </div>
-          </template>
-        </transition>
-        <!-- prev と next -->
-        <div class="service-slide-button">
-          <img class="button-img" src="@/assets/icons/arrow-left.png" @click="sliderPrev()" />
-          <img class="button-img" src="@/assets/icons/arrow-right.png" @click="sliderNext()" />
-        </div>
-      </div>
+    <div class="s-container">
+      <template v-for="content in contents">
+          <div class="s-box" :key="content.title">
+            <img class="s-img" :src="content.src" />
+            <h3 class="s-title">{{ content.title }}</h3>
+            <div class="s-caption">{{ content.caption }}</div>
+            <a class="button-link" :href="content.url" target="_blank">
+              {{ content.button }}
+            </a>
+          </div>
+      </template>
     </div>
   </div>
 </template>
@@ -31,8 +21,6 @@ export default {
   name: 'Service',
   data() {
     return {
-      transitionName: 'show-next',
-      visibleContent: 0,
       contents: [
         {
           title: 'グッズ販売',
@@ -71,37 +59,16 @@ export default {
         }
       ]
     }
-  },
-  mounted() {
-    setInterval(this.sliderNext, 7000)
-  },
-  methods: {
-    sliderPrev(){
-      this.transitionName = 'show-prev'
-      if(this.visibleContent < 1) {
-        this.visibleContent = this.contents.length - 1
-      } else {
-        this.visibleContent--
-      }  
-    },
-    sliderNext(){
-      this.transitionName = 'show-next'
-      if(this.visibleContent === this.contents.length - 1) {
-        this.visibleContent = 0
-      } else {
-        this.visibleContent++
-      }
-    }
   }
 }
 </script>
 
 <style scoped>
-.service-global {
+.s-global {
   color: #41312c;
   background-color: #ede4dc;
-  display: inline-block;
-  margin: 30px;
+  margin: 30px auto;
+  width: 80%;
 }
 
 .title {
@@ -112,43 +79,39 @@ export default {
   background: linear-gradient(transparent 70%, #82b7bd 70%);
 }
 
-.service-container {
+.s-container {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+
+}
+
+.s-box {
   background-color: #f9f5f0;
   height: 530px;
   width: 400px;
+  margin: 10px auto;
 }
 
-/* ここからスライド */
-.service-slide{
+.s-slide{
   height: 530px;
   width: 400px;
   overflow: hidden;
   position: relative;
 }
 
-.service-img {
+.s-img {
   width: 400px;
   margin: 20px 0;
 }
 
-.service-title {
+.s-title {
   font-size: 20px;
 }
 
-.service-caption {
+.s-caption {
   margin: 0 30px;
 }
-
-.service-slide-button{
-  align-items: center;
-  display: flex;
-  height: 50px;
-  justify-content: space-between;
-  position: absolute;
-  top: 150px;
-  width: 100%;
-  }
-
 .button-img {
   width:40px;
 }
@@ -173,15 +136,4 @@ export default {
   color: #ede4dc;
 }
 
- /* 進むトランジションと戻るトランジションをそれぞれ用意 */
-.show-next-enter-active, .show-next-leave-active,
-.show-prev-enter-active, .show-prev-leave-active  {
-  transition: all .4s;
-}
-.show-next-enter, .show-prev-leave-to {
-  transform: translateX(100%);
-}
-.show-next-leave-to, .show-prev-enter {
-  transform: translateX(-100%);
-}
 </style>

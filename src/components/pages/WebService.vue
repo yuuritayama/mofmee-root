@@ -6,7 +6,6 @@
             <div class="w-container" v-for="website in websites" :key="website.id">
                 <router-link :to="'/web-service/' + website.title"><img :src="website.src" /></router-link>
                 <h3><router-link class="w-title" :to="'/web-service/' + website.title">{{ website.title }}</router-link></h3>
-                <p>{{ website.use }}</p>
             </div>
         </div>
         <main-footer></main-footer>
@@ -30,7 +29,6 @@ export default {
                     url: 'https://mofmee.me',
                     title: 'mofmee',
                     src: require('@/assets/work-website/mofmee/thumbnail-mofmee.png'),
-                    use: 'Design / Vue.js',
                     id: 1
                 }
             ]

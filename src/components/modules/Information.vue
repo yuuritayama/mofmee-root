@@ -52,7 +52,6 @@ export default {
 
 .n-container {
   background-color: #f9f5f0;
-  height: 530px;
   width: 400px;
   padding: 20px;
 }
@@ -79,7 +78,7 @@ export default {
     content: '';
     bottom: -3px;
     left: 10px;
-    width: 100%;
+    width: 96%;
     border-bottom: solid 3px #ede4dc;
 }
 

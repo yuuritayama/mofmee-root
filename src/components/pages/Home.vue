@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <navbar></navbar>
+    <div class="blank"></div>
     <main-image></main-image>
     <sns></sns>
     <div class="contents">
@@ -42,14 +43,8 @@ export default {
   background-color: #ede4dc;
 }
 
-.contents {
-    display: inline-flex;
-  }
-
-@media screen and (max-width: 920px) {
-  .contents {
-    display: block;
-  }
+.blank {
+  margin: 20px;
 }
 
 .color{
