@@ -37,13 +37,22 @@ export default {
             id: '',
             websitesDetail: [
                 {
+                    src: require('@/assets/work-website/yuruyuru-yakuzen/thumbnail-yuruyuru-yakuzen.png'),
+                    title: 'ゆるゆる薬膳',
+                    url: 'https://ykzn.life',
+                    description: '※現在準備中です※　中医学・アーユルヴェーダにおける食材の効能情報データベースや、薬膳ジェネレーターなどの機能を実装しています。',
+                    potision: 'Design / Cording',
+                    tool: 'CLIP STUDIO PAINT',
+                    lang: 'HTML / CSS / Nuxt.js / firebase',
+                },
+                {
                     src: require('@/assets/work-website/mofmee/thumbnail-mofmee.png'),
                     title: 'mofmee',
                     url: 'https://mofmee.me',
                     description: '始めて本格的に制作したWebサイトです。当サイトの管理者であるももやまもふふのポートフォリオサイトになります。イラストやデザイン、コーディングまで一通り行いました。',
                     potision: 'Design / Cording',
                     tool: 'CLIP STUDIO PAINT',
-                    lang: 'HTML / CSS / Vue.js',
+                    lang: 'HTML / CSS / Vue.js / Bootstrap',
                 }
             ]
         }

@@ -5,7 +5,7 @@
             <h2>web-service</h2>
             <div class="w-container" v-for="website in websites" :key="website.id">
                 <router-link :to="'/web-service/' + website.title"><img :src="website.src" /></router-link>
-                <h3><router-link class="w-title" :to="'/web-service/' + website.title">{{ website.title }}</router-link></h3>
+                <!-- <h3><router-link class="w-title" :to="'/web-service/' + website.title">{{ website.title }}</router-link></h3> -->
             </div>
         </div>
         <main-footer></main-footer>
@@ -25,6 +25,12 @@ export default {
     data() {
         return {
             websites: [
+                {
+                    url: 'https://ykzn.life',
+                    title: 'ゆるゆる薬膳',
+                    src: require('@/assets/work-website/yuruyuru-yakuzen/thumbnail-yuruyuru-yakuzen.png'),
+                    id: 2
+                },
                 {
                     url: 'https://mofmee.me',
                     title: 'mofmee',
@@ -47,12 +53,23 @@ h2 {
 
 .w-global {
     margin: 20px 100px;
+    height: 1000px;
+}
+
+img {
+    width: 460px;
+    margin: 10px;
 }
 
 /* タブレット */
 @media screen and (max-width: 959px){
     .w-global {
         margin: 20px 50px;
+    }
+
+    img {
+        width: 460px;
+        margin: 10px;
     }
 }
 
@@ -61,26 +78,20 @@ h2 {
     .w-global {
         margin: 20px 20px;
     }
-}
 
-.w-container {
-    display: inline-block;
-    background-color: #f9f5f0;
-    margin: 4px;
-}
-
-img {
-    width: 500px;
-    margin: 10px;
-}
-
-@media screen and (max-width: 600px) {
     img {
         width: 300px;
     }
 }
 
+.w-container {
+    display: inline-block;
+    background-color: #f9f5f0;
+    margin: 10px;
+}
+
 .w-title {
+    font-size: 16px;
     margin: 10px;
     text-decoration: none;
     color: #41312c;

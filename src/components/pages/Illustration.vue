@@ -67,6 +67,8 @@ export default {
 <style scoped>
 .i-global{
     margin: 20px 100px;
+    /* contents増えたら修正 */
+    height: 1000px;
 }
 
 h2 {
@@ -81,7 +83,7 @@ h2 {
     display: inline-flex;
     flex-wrap: wrap;
     background-color: #f9f5f0;
-    margin: 4px;
+    margin: 10px 4px;
 }
 
 img {
