@@ -18,6 +18,12 @@ export default {
         return {
             informations: [
                 {
+                    date: '2020/5/30',
+                    title: 'illustrationを更新しました。',
+                    url: '',
+                    id: 3
+                },
+                {
                     date: '2019/3/9',
                     title: 'ホームページを更新しました。',
                     url: 'https://note.com/mof_mmm/n/n52cb49227cce',

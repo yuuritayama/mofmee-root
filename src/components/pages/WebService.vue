@@ -53,7 +53,6 @@ h2 {
 
 .w-global {
     margin: 20px 100px;
-    height: 1000px;
 }
 
 img {

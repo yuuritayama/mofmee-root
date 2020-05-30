@@ -4,7 +4,6 @@ import Router from 'vue-router'
 import Home from '@/components/pages/Home'
 import Profile from '@/components/pages/Profile'
 import Illustration from '@/components/pages/Illustration'
-import IllustrationDetail from '@/components/pages/IllustrationDetail'
 import WebService from '@/components/pages/WebService'
 import WebServiceDetail from '@/components/pages/WebServiceDetail'
 import Contact from '@/components/pages/Contact'
@@ -24,10 +23,6 @@ export default new Router({
     {
       path: '/illustration',
       component: Illustration
-    },
-    {
-      path: '/illustration/:id',
-      component: IllustrationDetail
     },
     {
       path: '/web-service',
