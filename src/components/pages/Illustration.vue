@@ -8,7 +8,7 @@
             </div>
             <div id="mask" @click="modalClose" :class="{hidden:showContent}"></div>
             <section id="modal" :class="{hidden:showContent}">
-                <img id="selectedImg" :src="selectedImage.modal" />
+                <img id="selectedImg" @click="modalClose" :src="selectedImage.modal" />
                 <p>{{ selectedImage.title }}</p>
                 <div id="close" @click="modalClose">閉じる</div>
             </section>
@@ -97,7 +97,7 @@ export default {
 
 <style scoped>
 .i-global{
-    margin: 20px 100px;
+    margin: 20px 100px 100px;
 }
 
 h2 {
@@ -134,12 +134,14 @@ h2 {
 #modal {
     background: #f9f5f0;
     width: 80%;
+    max-width: 800px;
     border-radius: 4px;
     position: absolute;
     top: 40px;
     left: 0;
     right: 0;
     margin: 0 auto;
+    transition: transform 0.4s;
     z-index: 2;
 }
 

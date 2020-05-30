@@ -20,7 +20,7 @@ export default {
                 {
                     date: '2020/5/30',
                     title: 'illustrationを更新しました。',
-                    url: '',
+                    url: 'https://note.com/mof_mmm/n/nf1926370c035',
                     id: 3
                 },
                 {

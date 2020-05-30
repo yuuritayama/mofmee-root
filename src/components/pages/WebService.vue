@@ -52,7 +52,7 @@ h2 {
 }
 
 .w-global {
-    margin: 20px 100px;
+    margin: 20px 100px 250px;
 }
 
 img {
