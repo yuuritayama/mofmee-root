@@ -134,15 +134,15 @@ h2 {
 #modal {
     background: #f9f5f0;
     width: 80%;
-    max-width: 800px;
+    max-width: 600px;
     border-radius: 4px;
-    position: absolute;
-    top: 40px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    transition: transform 0.4s;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transition: all 0.5s;
+    opacity: 1;
     z-index: 2;
+    transform: translate(-50%, -50%);
 }
 
 #modal #selectedImg {
@@ -171,7 +171,8 @@ h2 {
 }
 
 #modal.hidden {
-    transform: translate(0, -500px);
+    transform: translate(-50%, -500%);
+    opacity: 1;
 }
 
 
