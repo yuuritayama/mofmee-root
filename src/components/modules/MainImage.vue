@@ -1,9 +1,11 @@
 <template>
   <div class="top-image-global">
     <div class="mi-container">
-      <div class="mi-slide">
-              <img class="mi-img" :src="mainImages[currentIndex].src" />
-      </div>
+      <template class="mi-slide" v-for="(mainImage, idx) in mainImages" >
+        <div v-if="currentIndex === idx" :key="idx">
+          <img class="mi-img" :src="mainImage.src" />
+        </div>
+      </template>
       <!-- ロゴと説明 -->
       <div class="discription">
         <img src="@/assets/mofmee-logo01.png" />
