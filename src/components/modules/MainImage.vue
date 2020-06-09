@@ -1,11 +1,15 @@
 <template>
   <div class="top-image-global">
     <div class="mi-container">
-      <template class="mi-slide" v-for="(mainImage, idx) in mainImages" >
-        <div v-if="currentIndex === idx" :key="idx">
-          <img class="mi-img" :src="mainImage.src" />
-        </div>
-      </template>
+      <div class="mi-slide-outer">
+        <transition :name="transName">
+          <template v-for="(mainImage, idx) in mainImages" >
+            <div class="mi-slide-inner" v-if="currentIndex === idx" :key="idx">
+              <img class="mi-img" :src="mainImage.src" />
+            </div>
+          </template>
+        </transition>
+      </div>
       <!-- ロゴと説明 -->
       <div class="discription">
         <img src="@/assets/mofmee-logo01.png" />
@@ -57,57 +61,107 @@ export default {
 .top-image-global {
   position: relative;
   margin-bottom: 60px;
+
 }
 
 /* ここからスライド */
 /* PC */
 .mi-container {
+  width: 1280px;
   height: 600px;
+  margin: auto;
+  overflow: hidden;
 }
 
-.mi-slide{
-  height: 600px;
-  overflow: hidden;
+.mi-slide-outer {
   position: relative;
 }
 
+.mi-slide-inner {
+  width: 1280px;
+  position: absolute;
+  margin: auto;
+}
+
 .mi-img {
-  justify-content: center;
-  height: 600px;
+  width: 1280px;
+  margin: auto;
+}
+
+/* アニメーション */
+.next-enter-active, .next-leave-active {
+  transition: all .8s ease-out;
+}
+.next-enter {
+  transform: translateX(1280px);
+}
+.next-enter-to {
+  transform: translateX(0);
+}
+.next-leave {
+  transform: translateX(0);
+}
+.next-leave-to {
+  transform: translateX(-1280px);
 }
 
 /* タブレット */
 @media screen and (max-width: 959px){
   .mi-container {
-    height: 350px;
+    width: 600px;
+    height: 282px;
   }
 
-  .mi-slide{
-    height: 350px;
-    overflow: hidden;
+  .mi-slide-outer {
     position: relative;
   }
 
+  .mi-slide-inner {
+    width: 600px;
+    position: absolute;
+    margin: auto;
+  }
+
   .mi-img {
-    justify-content: center;
-    height: 350px
+    width: 600px;
+    margin:auto;
+  }
+
+  .next-enter {
+    transform: translateX(600px);
+  }
+  .next-leave-to {
+    transform: translateX(-600px);
   }
 }
 
 /* スマフォ */
 @media screen and (max-width:559px){
   .mi-container {
-    height: 230px;
+    width: 350px;
+    height: 164px;
   }
-  .mi-slide{
-      height: 230px;
-      overflow: hidden;
-      position: relative;
-    }
+
+  .mi-slide-outer {
+    position: relative;
+  }
+
+  .mi-slide-inner {
+    width: 350px;
+    position: absolute;
+    margin: auto;
+  }
 
   .mi-img {
-    justify-content: center;
-    height: 230px;
+    width: 350px;
+    margin:auto;
+  }
+
+  .next-enter {
+    transform: translateX(350px);
+  }
+  .next-leave-to {
+    transform: translateX(-305px);
   }
 }
 
