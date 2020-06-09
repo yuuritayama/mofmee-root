@@ -2,13 +2,13 @@
   <div class="top-image-global">
     <div class="mi-container">
       <div class="mi-slide">
-              <img class="mi-img" src='@/assets/top-images/top-image01.png' />
-        <!-- ロゴと説明 -->
-        <div class="discription">
-          <img src="@/assets/mofmee-logo01.png" />
-          <p>Mofufu Momoyama portfolio website<br>
-            Illustration / Web-design / Cording</p>
-        </div>
+              <img class="mi-img" :src="mainImages[currentIndex].src" />
+      </div>
+      <!-- ロゴと説明 -->
+      <div class="discription">
+        <img src="@/assets/mofmee-logo01.png" />
+        <p>Mofufu Momoyama portfolio website<br>
+          Illustration / Web-design / Cording</p>
       </div>
     </div>
   </div>
@@ -19,7 +19,10 @@ export default {
   name: 'MainImage',
   data() {
     return {
-      contents: [
+      currentIndex : 0,
+      timerId: undefined,
+      transName: 'next',
+      mainImages: [
         {
           title: 'top1',
           src: require('@/assets/top-images/top-image01.png')
@@ -29,6 +32,20 @@ export default {
           src: require('@/assets/top-images/top-image02.png')
         }
       ]
+    }
+  },
+  mounted() {
+      this.timertId = setInterval(() => {
+        this.next()
+      },3000)
+  },
+  methods: {
+    next() {
+      this.transName = 'next',
+      this.currentIndex++
+      if (this.currentIndex === this.mainImages.length) {
+        this.currentIndex = 0
+      }
     }
   }
 }
@@ -117,4 +134,6 @@ export default {
 .discription img {
   width: 80%;
 }
+
+
 </style>
