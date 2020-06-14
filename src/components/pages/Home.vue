@@ -4,7 +4,7 @@
     <div class="blank"></div>
     <main-image></main-image>
     <sns></sns>
-    <div class="contents">
+    <div class="home-contents">
       <contents></contents>
       <information></information>
     </div>
@@ -45,6 +45,13 @@ export default {
 
 .blank {
   margin: 20px;
+}
+
+@media screen and (min-width:1400px){
+  .home-contents {
+    max-width: 1280px;
+    margin: auto;
+  }
 }
 
 .color{

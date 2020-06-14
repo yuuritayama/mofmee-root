@@ -18,6 +18,12 @@ export default {
         return {
             informations: [
                 {
+                    date: '2020/6/14',
+                    title: 'ホームページを更新しました。',
+                    url: 'https://note.com/mof_mmm/n/n100419a0d41c',
+                    id: 4
+                },
+                {
                     date: '2020/5/30',
                     title: 'illustrationを更新しました。',
                     url: 'https://note.com/mof_mmm/n/nf1926370c035',
@@ -58,6 +64,8 @@ export default {
 @media screen and (max-width:559px){
     .i-global {
         margin: 30px 10px;
+    border: solid 2px blue;
+
     }
 
     .i-container {
