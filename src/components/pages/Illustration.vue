@@ -32,6 +32,18 @@ export default {
             selectedImage: "",
             images: [
                 {
+                    src: require('@/assets/work-illustration/iconHaco-thumbnail.png'),
+                    modal: require('@/assets/work-illustration/iconHaco.png'),
+                    title: '2020年7月 アイコンご依頼',
+                    id: 'icon7'
+                },
+                {
+                    src: require('@/assets/work-illustration/iconMollKun-thumbnail.png'),
+                    modal: require('@/assets/work-illustration/iconMollKun.png'),
+                    title: '2020年7月 アイコンご依頼',
+                    id: 'icon7'
+                },
+                {
                     src: require('@/assets/work-illustration/iconKumaMask-thumbnail.png'),
                     modal: require('@/assets/work-illustration/iconKumaMask.png'),
                     title: '2020年4月 アイコンご依頼',

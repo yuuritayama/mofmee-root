@@ -6,9 +6,9 @@
       <a href="https://www.instagram.com/mof_mmm/" target="_blank">
         <img class="sns-icon" src="@/assets/icons/instagram.png">
       </a>
-      <a href="https://github.com/mof-mmm" target="_blank">
+      <!-- <a href="https://github.com/mof-mmm" target="_blank">
         <img class="sns-icon" src="@/assets/icons/github.png">
-      </a>
+      </a> -->
     </div>
 </template>
 

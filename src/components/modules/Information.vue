@@ -64,8 +64,6 @@ export default {
 @media screen and (max-width:559px){
     .i-global {
         margin: 30px 10px;
-    border: solid 2px blue;
-
     }
 
     .i-container {
