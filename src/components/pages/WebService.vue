@@ -4,8 +4,8 @@
         <div class="w-global">
             <h2>web-service</h2>
             <div class="w-container" v-for="website in websites" :key="website.id">
-                <router-link :to="'/web-service/' + website.title"><img :src="website.src" /></router-link>
-                <!-- <h3><router-link class="w-title" :to="'/web-service/' + website.title">{{ website.title }}</router-link></h3> -->
+                <router-link :to="'/web-service/' + website.titleLink"><img :src="website.src" /></router-link>
+                <h3><router-link class="w-title" :to="'/web-service/' + website.titleLink">{{ website.title }}</router-link></h3>
             </div>
         </div>
         <main-footer></main-footer>
@@ -28,12 +28,14 @@ export default {
                 {
                     url: 'https://ykzn.life',
                     title: 'ゆるゆる薬膳',
+                    titleLink: 'yuruyuru-yakuzen',
                     src: require('@/assets/work-website/yuruyuru-yakuzen/thumbnail-yuruyuru-yakuzen.png'),
                     id: 2
                 },
                 {
                     url: 'https://mofmee.me',
                     title: 'mofmee',
+                    titleLink: 'mofmee',
                     src: require('@/assets/work-website/mofmee/thumbnail-mofmee.png'),
                     id: 1
                 }
