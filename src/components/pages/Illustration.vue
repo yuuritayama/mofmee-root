@@ -183,7 +183,7 @@ h2 {
 }
 
 #modal.hidden {
-    transform: translate(-50%, -500%);
+    transform: translate(-50%, -1000%);
     opacity: 1;
 }
 
