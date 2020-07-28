@@ -14,7 +14,7 @@
       <div class="discription">
         <img src="@/assets/mofmee-logo01.png" />
         <p>Mofufu Momoyama portfolio website<br>
-          Illustration / Web-design / Cording</p>
+          Illustration / Design / Cording</p>
       </div>
     </div>
   </div>

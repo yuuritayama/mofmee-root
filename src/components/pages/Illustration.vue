@@ -2,7 +2,8 @@
     <div>
         <navbar></navbar>
         <div class="i-global">
-            <h2>illustration</h2>
+            <h2>work</h2>
+            <div class="i-description">イラストの実績です。クリックで全体表示します。</div>
             <div id="open" class="i-container" v-for="image in images" :key="image.id">
                 <img id="thumbnail" @click="modalOpen(image)" :src="image.src" />
             </div>
@@ -117,6 +118,10 @@ h2 {
     width: 100%;
     /* マーカー風下線 */
     background: linear-gradient(transparent 70%, #82b7bd 70%);
+}
+
+.i-description {
+    margin: 20px auto;
 }
 
 
